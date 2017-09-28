@@ -18,6 +18,8 @@ defmodule UnicycleWeb.Router do
 
     get "/", PageController, :index
     resources "/events", EventController
+    resources "/videos", VideoController
+    resources "/images", ImageController
   end
 
   scope "/podies-admin", UnicycleWeb do
