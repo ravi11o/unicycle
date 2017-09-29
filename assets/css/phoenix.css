@@ -10,7 +10,7 @@
 
 /* Space out content a bit */
 body, form, ul, table {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -40,7 +40,7 @@ body, form, ul, table {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 900px;
+    max-width: 1000px;
   }
 }
 .container-narrow > hr {
@@ -74,4 +74,11 @@ body, form, ul, table {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+@media (min-width: 768px)
+phoenix.css:9
+.navbar-nav {
+    float: left;
+    /* margin: 0; */
 }

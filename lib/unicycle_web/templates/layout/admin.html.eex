@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hello Unicycle!</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="masthead">
+        <h3 class="text-muted"><%= link "Unicycle Portal", to: page_path(@conn, :index) %></h3>
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
+            <ul class="navbar-nav text-md-center nav-justified w-100">
+              <li class="nav-item">
+                <%= link "Dashboard", to: page_path(@conn, :dashboard), class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link "Events", to: event_path(@conn, :index), class: "nav-link" %> 
+              </li>
+              <li class="nav-item">
+                <%= link "Images", to: image_path(@conn, :index), class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link "Videos", to: video_path(@conn, :index), class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sales & Services</a>
+              </li>
+            </ul>
+        </nav>
+      </div>
+    
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+      <main role="main">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+
+    </div> <!-- /container -->
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

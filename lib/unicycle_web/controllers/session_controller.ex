@@ -2,6 +2,8 @@ defmodule UnicycleWeb.SessionController do
   use UnicycleWeb, :controller
   import Comeonin.Bcrypt, only: [checkpw: 2]
 
+  plug :put_layout, "login.html"
+
   alias Unicycle.Accounts
 
   def new(conn, _params) do
@@ -24,11 +26,12 @@ defmodule UnicycleWeb.SessionController do
   	    conn
   	    |> put_flash(:info, "login Successful")
   	    |> put_session(:admin_id, admin.id)
-  	    |> redirect(to: page_path(conn, :index))
+  	    |> redirect(to: page_path(conn, :dashboard))
   	  {:error, _reason, conn} -> 
   	    conn
   	    |> put_flash(:error, "Invalid Username/Password Combination")
   	    |> redirect(to: session_path(conn, :new))
   	end
   end
+
 end
