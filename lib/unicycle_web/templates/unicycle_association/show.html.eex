@@ -1,0 +1,28 @@
+<h2>Show Unicycle association</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @unicycle_association.name %>
+  </li>
+
+  <li>
+    <strong>Website:</strong>
+    <%= @unicycle_association.website %>
+  </li>
+
+  <li>
+    <strong>Hq:</strong>
+    <%= @unicycle_association.hq %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @unicycle_association.country %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: unicycle_association_path(@conn, :edit, @unicycle_association) %></span>
+<span><%= link "Back", to: unicycle_association_path(@conn, :index) %></span>

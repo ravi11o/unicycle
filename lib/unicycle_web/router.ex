@@ -43,6 +43,7 @@ defmodule UnicycleWeb.Router do
       resources "/events", EventController
       resources "/videos", VideoController
       resources "/images", ImageController
+      resources "/unicycle_associations", UnicycleAssociationController
 
     end
   end

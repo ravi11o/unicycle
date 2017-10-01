@@ -1,0 +1,32 @@
+<h2>Listing Unicycle associations</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Website</th>
+      <th>Hq</th>
+      <th>Country</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for unicycle_association <- @unicycle_associations do %>
+    <tr>
+      <td><%= unicycle_association.name %></td>
+      <td><%= unicycle_association.website %></td>
+      <td><%= unicycle_association.hq %></td>
+      <td><%= unicycle_association.country %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: unicycle_association_path(@conn, :show, unicycle_association), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: unicycle_association_path(@conn, :edit, unicycle_association), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: unicycle_association_path(@conn, :delete, unicycle_association), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Unicycle association", to: unicycle_association_path(@conn, :new) %></span>

@@ -34,6 +34,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Sales & Services</a>
               </li>
+              <li class="nav-item">
+                <%= link "Uncycle Associations", to: unicycle_association_path(@conn, :index), class: "nav-link" %>
+              </li>
             </ul>
         </nav>
       </div>

@@ -1,0 +1,5 @@
+<h2>New Unicycle association</h2>
+
+<%= render "form.html", Map.put(assigns, :action, unicycle_association_path(@conn, :create)) %>
+
+<span><%= link "Back", to: unicycle_association_path(@conn, :index) %></span>

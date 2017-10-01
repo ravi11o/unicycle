@@ -7,8 +7,13 @@ defmodule UnicycleWeb.SessionController do
   alias Unicycle.Accounts
 
   def new(conn, _params) do
-    conn
-    |> render("new.html")
+    if conn.assigns.admin do
+      conn
+      |> redirect(to: page_path(conn, :dashboard))
+    else
+      conn
+      |> render("new.html")
+    end
   end
 
   def login(conn, %{"session" => %{"username" => username, "password" => pass}}) do
